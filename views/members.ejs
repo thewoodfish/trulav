@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- x-icon -->
+    <link rel="shortcut icon" href="https://labartisan.net/demo/turulav/turulav-light/assets/images/x-icon.png"
+        type="image/x-icon">
+
+    <!-- Other css -->
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/animate.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>TuruLav</title>
+</head>
+
+<body>
+    <!-- preloader start here -->
+    <div class="preloader">
+        <div class="preloader-inner">
+            <div class="preloader-icon">
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- preloader ending here -->
+
+
+
+
+    <!-- ==========Header Section Starts Here========== -->
+    <header class="header-section">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="https://labartisan.net/demo/turulav/turulav-light/index.html">
+                            <img src="https://labartisan.net/demo/turulav/turulav-light/assets/images/logo/logo.png"
+                                alt="logo">
+                        </a>
+                    </div>
+                    <div class="menu-area">
+                        <ul class="menu">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li><a href="/profile">Profile</a></li>
+                        </ul>
+                        <a href="/logout" class="login"><span>LOG OUT</span> </a>
+
+                        <!-- toggle icons -->
+                        <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="ellepsis-bar d-lg-none">
+                            <i class="icofont-info-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==========Header Section Ends Here========== -->
+
+    <section class="page-header-section style-1 bg-pink">
+    </section>
+
+    <!-- ==========Member page Section Start Here========== -->
+    <section class="member-page-section">
+        <div class="container">
+            <div class="member-wrapper">
+                <ul class="member-info mb-4">
+                    <li class="all-member">
+                        <p>All Members </p>
+                        <p>
+                            <%= Object.keys(data).length %>
+                        </p>
+                    </li>
+                </ul>
+
+                <div class="row g-3 row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center">
+                    <% for (const [did, values] of Object.entries(data)) { %>
+                        <div class="col">
+                            <div class="lab-item member-item style-1 style-2">
+                                <div class="lab-inner">
+                                    <div class="lab-thumb">
+                                        <img src="https://labartisan.net/demo/turulav/turulav-light/assets/images/member/01.jpg"
+                                            alt="member-img">
+                                    </div>
+                                    <div class="lab-content">
+                                        <h6><a href="/profile?did=<%= did %>">
+                                                <%= values[0] %>
+                                            </a></h6>
+                                        <p><%= values[1] %></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ==========Member page Section Ends Here========== -->
+
+
+    <!-- All Scripts -->
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/jquery.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/waypoints.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/swiper.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/jquery.counterup.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/wow.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/isotope.pkgd.min.js"></script>
+    <script src="https://labartisan.net/demo/turulav/turulav-light/assets/js/functions.js"></script>
+</body>
+
+</html>

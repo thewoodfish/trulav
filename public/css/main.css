@@ -1,0 +1,28 @@
+.signal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #e8100f !important;
+  color: white !important;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+  opacity: 1;
+}
+
+.signal-off {
+  opacity: 0;
+}
+
+@media (min-width: 992px) {
+  .page-header-section.style-1 {
+    padding-top: 150px !important;
+    padding-bottom: 10px !important;
+  }
+}
+
+.prof-img {
+  margin-bottom: 10px;
+  max-height: 160px;
+}

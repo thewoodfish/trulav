@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- x-icon -->
+    <link rel="shortcut icon" href="https://labartisan.net/demo/turulav/turulav-light/assets/images/x-icon.png"
+        type="image/x-icon">
+
+    <!-- Other css -->
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/animate.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/icofont.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/swiper.min.css">
+    <link rel="stylesheet" href="https://labartisan.net/demo/turulav/turulav-light/assets/css/style.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>TuruLav</title>
+</head>
+
+<body>
+
+    <!-- ==========Header Section Starts Here========== -->
+    <header class="header-section">
+        <div class="header-bottom">
+            <div class="container">
+                <div class="header-wrapper">
+                    <div class="logo">
+                        <a href="https://labartisan.net/demo/turulav/turulav-light/index.html">
+                            <img src="https://labartisan.net/demo/turulav/turulav-light/assets/images/logo/logo.png"
+                                alt="logo">
+                        </a>
+                    </div>
+                    <div class="menu-area">
+                        <ul class="menu">
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li><a href="/profile">Profile</a></li>
+                        </ul>
+                        <a href="/logout" class="login"><span>LOG OUT</span> </a>
+
+                        <!-- toggle icons -->
+                        <div class="header-bar d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="ellepsis-bar d-lg-none">
+                            <i class="icofont-info-square"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ==========Sign up Section start Here========== -->
+    <div class="login-section padding-tb bg-ash">
+        <div class="container">
+            <div class="account-wrapper">
+                <% if (is_user) { %>
+                    <h3 class="title">Edit your profile</h3>
+                    <% } else { %>
+                        <h3 class="title">
+                            <%= data.name %>'s profile
+                        </h3>
+                        <img src="https://labartisan.net/demo/turulav/turulav-light/assets/images/member/01.jpg" alt="member-img" class="prof-img">
+                        <% } %>
+                            <form class="account-form">
+                                <div class="form-group profile-form">
+                                    <input type="text" placeholder="Name" value="<%= data.name %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <div class="form-group profile-form">
+                                    <input type="text" placeholder="Username" value="<%= data.username %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <div class="form-group profile-form">
+                                    <input type="email" placeholder="Email" value="<%= data.email %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <div class="form-group profile-form">
+                                    <input type="text" placeholder="Telephone" value="<%= data.telephone %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <div class="form-group profile-form">
+                                    <input type="text" placeholder="Address" value="<%= data.address %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <div class="form-group profile-form">
+                                    <input type="text" placeholder="Country" value="<%= data.country %>" <%=!is_user
+                                        ? "disabled" : "" %>>
+                                </div>
+                                <% if (is_user) { %>
+                                    <div class="form-group profile-form">
+                                        <button class="d-block lab-btn profile-update-btn"
+                                            onclick="return false"><span>Update Profile</span></button>
+                                    </div>
+                                    <% } %>
+                            </form>
+            </div>
+        </div>
+    </div>
+    <!-- ==========Sign up Section ends Here========== -->
+</body>
+
+<script src="js/main.js"></script>
+
+</html>
